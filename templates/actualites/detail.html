@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title">{{ blog_obj.title }}</h1>
+<p>{{ blog_obj.body | safe}}</p>
+
+{% for tag in actualite.tags.all %}
+<h3 class="sidebar__title">{{tag.name}}</h3>
+{% endfor %}
+<!-- /.sidebar__title -->
+<ul class="list-unstyled sidebar__lists">
+  {% for actualite in similar_posts %}
+  <li>
+    <a href="{% url 'actualite_detail' actualite.slug %}"
+      >{{actualite.title}}</a
+    >
+  </li>
+  {% empty %} {% endfor %}
+</ul>
+
+{% endblock %}

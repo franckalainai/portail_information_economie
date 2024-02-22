@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %} {% for p in publications %}
+<div class="actualite block">
+  <h2 class="subtitle">{{ p.title }}</h2>
+  <p>
+    <a href="{{ p.document.url }}" target="_blank"
+      >Titre du document: {{ p.title }}</a
+    >
+  </p>
+
+  <small>publication at {{ p.date_added }}</small>
+
+  <p>{{ p.intro }}</p>
+
+  <a href="{% url 'publication_detail' p.slug %}">Read more</a>
+</div>
+{% endfor %} {% endblock %}

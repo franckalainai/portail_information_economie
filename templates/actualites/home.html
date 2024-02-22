@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %} {% for actualite in actualites %}
+<div class="actualite block">
+  <h2 class="subtitle">{{ actualite.title }}</h2>
+
+  <small>actualite at {{ actualite.date_added }}</small>
+
+  <p>{{ actualite.intro }}</p>
+
+  <a href="{% url 'actualite_detail' actualite.slug %}">Read more</a>
+</div>
+{% endfor %} {% endblock %}
