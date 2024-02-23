@@ -47,60 +47,53 @@
       >
         <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/img/logo.png" class="logo" alt="Logo" />
+      <a class="navbar-brand" href="{% url ('/') %}">
+        <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo" />
       </a>
     </div>
     <!-- End Header Navigation -->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-menu">
-      <ul class="nav navbar-nav navbar-left" data-in="#" data-out="#">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+      <ul class="nav navbar-nav navbar-left" data-in="" data-out="#">
+        <li>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"
             ><i class="fa fa-home"></i
           ></a>
-          <!--
-                          <ul class="dropdown-menu">
-                              <li><a href="index.html">Home Version One</a></li>
-                              <li><a href="index-2.html">Home Version Two</a></li>
-                              <li><a href="index-3.html">Home Version Three</a></li>
-                              <li><a href="index-4.html">Home Version Four</a></li>
-                              <li><a href="index-5.html">Home Version Five</a></li>
-                              <li><a href="index-6.html">Home Version Six</a></li>
-                              <li><a href="index-7.html">Home Version Seven</a></li>
-                              <li><a href="index-8.html">Home Version Eight</a></li>
-                              <li><a href="index-9.html">Home Version Nine</span></a></li>
-                              <li><a href="index-10.html">Home Version Ten</a></li>
-                              <li><a href="index-op.html">Home Onepage</a></li>
-                              <li><a href="index-op-2.html">Home Onepage Two <span class="badge">New</span></a></li>
-                              <li><a href="index-op-3.html">Home Onepage Three <span class="badge">New</span></a></li>
-                              <li><a href="index-op-4.html">Home Onepage Four <span class="badge">New</span></a></li>
-                          </ul>
-                          -->
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"
             >Côte d'Ivoire en Bref</a
           >
           <ul class="dropdown-menu">
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="">Présentation du pays</a></li>
+            <li><a href="">Position géostratégique</a></li>
+            <li><a href="">Vie politique et administrative</a></li>
+            <li><a href="">Caractéristiques socio-économiques</a></li>
+            <li><a href="">Atouts et potentialités</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Gallery</a
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                >Intégration régionale</a
               >
               <ul class="dropdown-menu">
-                <li><a href="gallery-grid-colum.html">Grid Colum</a></li>
+                <li><a href="">Indicateurs UEMOA/CEDEAO</a></li>
                 <li>
-                  <a href="gallery-masonary-colum.html">Masonary Colum</a>
+                  <a href="">CIV dans l'UEMOA</a>
                 </li>
               </ul>
             </li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="404.html">Error Page</a></li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                >Coopération économique</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="">Coopération Technique</a></li>
+                <li>
+                  <a href="">Coopération financière</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="">Carte diplomatique</a></li>
           </ul>
         </li>
         <li class="dropdown">
