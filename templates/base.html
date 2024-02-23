@@ -2,180 +2,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Ministère de l'Economie, du Plan et du Développement</title>
-
-    <!-- responsive meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- For IE -->
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Educom - Education & LMS Template" />
 
+    <!-- ========== Page Title ========== -->
+    <title>Educom - Education & LMS Template</title>
+
+    <!-- ========== Favicon Icon ========== -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="shortcut icon"
+      href="{% static 'assets/img/favicon.png' %}"
+      type="image/x-icon"
     />
 
-    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
     <link
-      rel="stylesheet"
-      href="{% static 'assets/css/custom-animate.css' %}"
-    />
-    <link rel="stylesheet" href="{% static 'assets/css/fancybox.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}" />
-    <link
-      rel="stylesheet"
       href="{% static 'assets/css/font-awesome.min.css' %}"
-    />
-    <link rel="stylesheet" href="{% static 'assets/css/icomoon.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/imp.css' %}" />
-    <link
       rel="stylesheet"
-      href="{% static 'assets/css/jquery.bootstrap-touchspin.css' %}"
     />
+    <link href="{% static 'assets/css/flaticon-set.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/themify-icons.css' %}" rel="stylesheet" />
     <link
-      rel="stylesheet"
       href="{% static 'assets/css/magnific-popup.css' %}"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/rtl.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/scrollbar.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}" />
+    <link
+      href="{% static 'assets/css/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/css/owl.theme.default.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/bootsnav.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
 
-    <!-- Module css -->
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/header-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/banner-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/about-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/blog-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/fact-counter-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/faq-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/contact-page.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/breadcrumb-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/team-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/partner-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/testimonial-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/services-section.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/module-css/footer-section.css' %}"
-    />
-
-    <link
-      href="{% static 'assets/css/color/theme-color.css' %}"
-      id="jssDefault"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'assets/images/favicon/apple-touch-icon.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="{% static 'assets/images/favicon/favicon-32x32.png' %}"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="{% static 'assets/images/favicon/favicon-16x16.png' %}"
-      sizes="16x16"
-    />
-
-    <!-- Fixing Internet Explorer-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/html5/html5shiv.min.js"></script>
+      <script src="assets/js/html5/respond.min.js"></script>
     <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div class="boxed_wrapper ltr">
-      {% include 'header.html' %} {% block content %} {% endblock %} {% include
-      'footer.html' %}
+    <div class="top-bar-area bg-dark text-light">
+      {% include 'include/topbar.html' %}
     </div>
+    <header id="home">{% include 'include/header.html' %}</header>
+    {% include 'include/banner.html' %} {%block content %} {% endblock %}
+    <footer class="bg-light">{% include 'include/footer.html' %}</footer>
 
-    <script src="{% static 'assets/js/jquery.js' %}"></script>
-    <script src="{% static 'assets/js/aos.' %}"></script>
-    <script src="{% static 'assets/js/appear.js' %}"></script>
-    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'assets/js/isotope.js' %}"></script>
-    <script src="{% static 'assets/js/jquery.bootstrap-touchspin.js' %}"></script>
-    <script src="{% static 'assets/js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/equal-height.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
     <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'assets/js/jquery.event.move.js' %}"></script>
-    <script src="{% static 'assets/js/jquery.fancybox.js' %}"></script>
     <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr.custom.13711.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress-bar.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-to.js' %}"></script>
+    <script src="{% static 'assets/js/YTPlayer.min.js' %}"></script>
+    <script src="{% static 'assets/js/loopcounter.js' %}"></script>
     <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
-    <script src="{% static 'assets/js/jquery.paroller.min.js' %}"></script>
-    <script src="{% static 'assets/js/jquery-sidebar-content.js' %}"></script>
-    <script src="{% static 'assets/js/knob.js' %}"></script>
-    <script src="{% static 'assets/js/map-script.js' %}"></script>
-    <script src="{% static 'assets/js/owl.js' %}"></script>
-    <script src="{% static 'assets/js/pagenav.js' %}"></script>
-    <script src="{% static 'assets/js/scrollbar.js' %}"></script>
-    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
-    <script src="{% static 'assets/js/tilt.jquery.js' %}"></script>
-    <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
-    <script src="{% static 'assets/js/validation.js' %}"></script>
-    <script src="{% static 'assets/js/wow.js' %}"></script>
-
-    <script src="{% static 'assets/js/jquery-1color-switcher.min.js' %}"></script>
-
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM&callback=initMap"
-    ></script>
-
-    <!-- thm custom script -->
-    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/bootsnav.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
   </body>
 </html>

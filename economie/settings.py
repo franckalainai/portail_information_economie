@@ -87,17 +87,27 @@ WSGI_APPLICATION = 'economie.wsgi.application'
     #}
 #}
 
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'economie',
+        #'USER': 'root',
+        #'PASSWORD': '',
+        #'HOST':'localhost',
+        #'PORT':'3306',
+    #}
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'economie',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'c2259596c_economie',
+        'USER': 'c2259596c_economie',
+        'PASSWORD': 'manager$2024',
         'HOST':'localhost',
         'PORT':'3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
