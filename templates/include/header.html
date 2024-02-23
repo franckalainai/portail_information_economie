@@ -48,7 +48,7 @@
       >
         <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="{% url 'index' %}">
         <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo" />
       </a>
     </div>
@@ -58,7 +58,10 @@
     <div class="collapse navbar-collapse" id="navbar-menu">
       <ul class="nav navbar-nav navbar-left" data-in="" data-out="#">
         <li>
-          <a href="" class="dropdown-toggle" data-toggle="dropdown"
+          <a
+            href="{% url 'index' %}"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
             ><i class="fa fa-home"></i
           ></a>
         </li>
@@ -102,9 +105,20 @@
             >Cadre macroéconomique</a
           >
           <ul class="dropdown-menu">
-            <li><a href="courses-grid.html">Course Grid</a></li>
-            <li><a href="courses-carousel.html">Course Carousel</a></li>
-            <li><a href="course-details.html">Course Details</a></li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                >Secteur réel</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="">PIB offre</a></li>
+                <li>
+                  <a href="">PIB demande</a>
+                </li>
+                <li>
+                  <a href="">Inflation</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="dropdown">
