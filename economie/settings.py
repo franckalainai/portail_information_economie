@@ -26,7 +26,7 @@ SECRET_KEY = 'v1$#u%h+xamjax#0chkpgxqw78coa5#2)0oyd2un3-s4fq4v%+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
