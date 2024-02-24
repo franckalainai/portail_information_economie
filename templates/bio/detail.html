@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title">{{ blog_obj.title }}</h1>
+<p>{{ blog_obj.body | safe}}</p>
+
+{% for tag in bio.tags.all %}
+<h3 class="sidebar__title">{{tag.name}}</h3>
+{% endfor %}
+<!-- /.sidebar__title -->
+<ul class="list-unstyled sidebar__lists">
+  {% for bio in similar_posts %}
+  <li>
+    <a href="{% url 'bio_detail' bio.slug %}">{{bio.title}}</a>
+  </li>
+  {% empty %} {% endfor %}
+</ul>
+
+{% endblock %}

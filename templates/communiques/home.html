@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %} {% for c in communiques %}
+<div class="actualite block">
+  <h2 class="subtitle">{{ c.title }}</h2>
+
+  <small>Communiques at {{ c.date_added }}</small>
+
+  <p>{{ c.intro }}</p>
+
+  <a href="{% url 'communique_detail' c.slug %}">Read more</a>
+</div>
+{% endfor %} {% endblock %}

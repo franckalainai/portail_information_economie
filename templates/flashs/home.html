@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %} {% for f in flashs %}
+<div class="actualite block">
+  <h2 class="subtitle">{{ f.title }}</h2>
+
+  <small>FLashs at {{ f.date_added }}</small>
+
+  <p>{{ f.intro }}</p>
+
+  <a href="{% url 'bio_detail' f.slug %}">Read more</a>
+</div>
+{% endfor %} {% endblock %}

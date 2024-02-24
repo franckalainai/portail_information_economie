@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %} {% for a in agendas %}
+<div class="actualite block">
+  <h2 class="subtitle">{{ a.title }}</h2>
+
+  <small>Agendas at {{ a.date_added }}</small>
+
+  <p>{{ a.intro }}</p>
+
+  <a href="{% url 'agenda_detail' a.slug %}">Read more</a>
+</div>
+{% endfor %} {% endblock %}

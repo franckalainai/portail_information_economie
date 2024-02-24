@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title">{{ blog_obj.title }}</h1>
+<p>{{ blog_obj.body | safe}}</p>
+
+{% for tag in communique.tags.all %}
+<h3 class="sidebar__title">{{tag.name}}</h3>
+{% endfor %}
+<!-- /.sidebar__title -->
+<ul class="list-unstyled sidebar__lists">
+  {% for communique in similar_posts %}
+  <li>
+    <a href="{% url 'communique_detail' communique.slug %}">{{communique.title}}</a>
+  </li>
+  {% empty %} {% endfor %}
+</ul>
+
+{% endblock %}

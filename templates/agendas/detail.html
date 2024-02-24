@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title">{{ blog_obj.title }}</h1>
+<p>{{ blog_obj.body | safe}}</p>
+
+{% for tag in agenda.tags.all %}
+<h3 class="sidebar__title">{{tag.name}}</h3>
+{% endfor %}
+<!-- /.sidebar__title -->
+<ul class="list-unstyled sidebar__lists">
+  {% for agenda in similar_posts %}
+  <li>
+    <a href="{% url 'agenda_detail' agenda.slug %}">{{agenda.title}}</a>
+  </li>
+  {% empty %} {% endfor %}
+</ul>
+
+{% endblock %}

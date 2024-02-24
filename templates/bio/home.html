@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %} {% for b in bios %}
+<div class="actualite block">
+  <h2 class="subtitle">{{ b.title }}</h2>
+
+  <small>biographie at {{ b.date_added }}</small>
+
+  <p>{{ b.intro }}</p>
+
+  <a href="{% url 'bio_detail' b.slug %}">Read more</a>
+</div>
+{% endfor %} {% endblock %}

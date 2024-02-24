@@ -20,3 +20,4 @@ def actualite_detail(request, slug):
     except Exception as e:
         print(e)
     return render(request, 'actualites/detail.html', context)
+

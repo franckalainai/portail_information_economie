@@ -9,5 +9,33 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'body']
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('body',)
-  
+
+class BioAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'slug', 'intro','date_added')
+    search_fields = ['title', 'body']
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('body',)
+
+class FlashAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'slug', 'intro','date_added')
+    search_fields = ['title', 'body']
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('body',)
+
+class CommuniqueAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'slug', 'intro','date_added')
+    search_fields = ['title', 'body']
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('body',)
+
+class AgendaAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'slug', 'intro','date_added')
+    search_fields = ['title', 'body']
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('body',)
+
+admin.site.register(Agenda, AgendaAdmin)
+admin.site.register(Communique, CommuniqueAdmin)
+admin.site.register(Flash, FlashAdmin)
+admin.site.register(Bio, BioAdmin)
 admin.site.register(Post, PostAdmin)
