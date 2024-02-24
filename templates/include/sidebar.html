@@ -23,8 +23,8 @@
         {% for post in similar_posts %}
         <li>
           <div class="thumb">
-            <a href="#">
-              <img src="assets/img/800x800.png" alt="Thumb" />
+            <a href="{% url 'post_detail' post.slug %}">
+              <img src="{{ post.image.url }}" alt="Thumb" />
             </a>
           </div>
           <div class="info">
