@@ -1,8 +1,6 @@
-{% extends 'base_detail.html' %} {% block content %}
-
 <!-- Start Blog
-  ============================================= -->
-<div class="blog-area single full-blog left-sidebar full-blog default-padding">
+    ============================================= -->
+<div class="blog-area single full-blog right-sidebar full-blog default-padding">
   <div class="container">
     <div class="row">
       <div class="blog-items">
@@ -56,14 +54,12 @@
                       </ul>
                     </div>
                   </div>
-                  <h3>{{ post.title }}</h3>
+                  <h3>{{post.title}}</h3>
                   <p>{{ post.body | safe }}</p>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Start Blog Comment -->
 
           <!-- End Comments Form -->
         </div>
@@ -76,4 +72,7 @@
 </div>
 <!-- End Blog -->
 
-{% endblock %}
+<!-- Start Footer 
+  ============================================= -->
+{% include 'footer.html' %}
+<!-- End Footer -->
