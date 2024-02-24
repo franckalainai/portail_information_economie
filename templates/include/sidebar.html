@@ -1,21 +1,26 @@
 <div class="sidebar col-md-4">
   <aside>
     <div class="sidebar-item search">
+      <!--
       <div class="title">
         <h4>Search</h4>
       </div>
+      -->
       <div class="sidebar-info">
         <form>
           <input type="text" class="form-control" />
-          <input type="submit" value="search" />
+          <input type="submit" value="Recherche" />
         </form>
       </div>
     </div>
     <div class="sidebar-item recent-post">
+      <!--
       <div class="title">
         <h4>Recent Post</h4>
       </div>
+      -->
       <ul>
+        {% for post in similar_posts %}
         <li>
           <div class="thumb">
             <a href="#">
@@ -23,41 +28,17 @@
             </a>
           </div>
           <div class="info">
-            <a href="#">Participate in staff meetingness manage dedicated</a>
+            <a href="{% url 'post_detail' post.slug %}">{{post.title}}</a>
             <div class="meta-title">
-              <span class="post-date">12 Feb, 2020</span> - By
+              <span class="post-date">{{ post.date_added }}</span>
+              <!--
+              - By
               <a href="#">Author</a>
+              -->
             </div>
           </div>
         </li>
-        <li>
-          <div class="thumb">
-            <a href="#">
-              <img src="assets/img/800x800.png" alt="Thumb" />
-            </a>
-          </div>
-          <div class="info">
-            <a href="#">Future Plan & Strategy for Consutruction </a>
-            <div class="meta-title">
-              <span class="post-date">12 Feb, 2020</span> - By
-              <a href="#">Author</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="thumb">
-            <a href="#">
-              <img src="assets/img/800x800.png" alt="Thumb" />
-            </a>
-          </div>
-          <div class="info">
-            <a href="#">Melancholy particular devonshire alteration</a>
-            <div class="meta-title">
-              <span class="post-date">12 Feb, 2020</span> - By
-              <a href="#">Author</a>
-            </div>
-          </div>
-        </li>
+        {% empty %} {% endfor %}
       </ul>
     </div>
   </aside>

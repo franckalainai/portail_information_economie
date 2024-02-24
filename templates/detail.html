@@ -10,24 +10,32 @@
           <div class="single-item">
             <div class="item">
               <!-- Start Post Thumb -->
+              <!--
               <div class="thumb">
                 <a href="#">
                   <img src="assets/img/1500x700.png" alt="Thumb" />
                 </a>
               </div>
+              -->
               <!-- Start Post Thumb -->
 
               <div class="info">
                 <div class="meta">
                   <ul>
+                    <!--
                     <li>
                       <a href="#"><i class="fas fa-user"></i> Admin</a>
                     </li>
-                    <li><i class="fas fa-calendar-alt"></i> 14 Jun, 2020</li>
+                    -->
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>Publié le {{
+                      post.date_added }}
+                    </li>
                   </ul>
                 </div>
 
                 <div class="content">
+                  <!--
                   <div class="tags share">
                     <div class="items">
                       <a href="#">Event</a>
@@ -56,7 +64,10 @@
                       </ul>
                     </div>
                   </div>
+                  -->
+                  <!--
                   <h3>{{post.title}}</h3>
+                  -->
                   <p>{{ post.body | safe }}</p>
                 </div>
               </div>
