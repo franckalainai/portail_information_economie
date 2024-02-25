@@ -96,16 +96,16 @@ DATABASES = {
     }
 }
 
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'c2259596c_economie',
-        #'USER': 'c2259596c_economie',
-        #'PASSWORD': 'manager$2024',
-        #'HOST':'localhost',
-        #'PORT':'3306',
-    #}
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'c2259596c_economie',
+        'USER': 'c2259596c_economie',
+        'PASSWORD': 'manager$2024',
+        'HOST':'localhost',
+        'PORT':'3306',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -148,17 +148,17 @@ USE_TZ = True
 #STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # en ligne
-#STATIC_URL = '/static/'
-#STATIC_ROOT = BASE_DIR / 'static'
-#STATICFILES_DIRS = [
-    #'economie/static'
-#]
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [
+    'economie/static'
+]
 
 # en local
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    'static'
-]
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = [
+    #'static'
+#]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
