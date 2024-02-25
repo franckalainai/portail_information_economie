@@ -2,10 +2,10 @@
   <aside>
     <div class="sidebar-item search">
       <!--
-      <div class="title">
-        <h4>Search</h4>
-      </div>
-      -->
+        <div class="title">
+          <h4>Search</h4>
+        </div>
+        -->
       <div class="sidebar-info">
         <form>
           <input type="text" class="form-control" />
@@ -15,26 +15,26 @@
     </div>
     <div class="sidebar-item recent-post">
       <!--
-      <div class="title">
-        <h4>Recent Post</h4>
-      </div>
-      -->
+        <div class="title">
+          <h4>Recent Post</h4>
+        </div>
+        -->
       <ul>
-        {% for post in similar_posts %}
+        {% for a in similar_posts %}
         <li>
           <div class="thumb">
-            <a href="{% url 'post_detail' post.slug %}">
-              <img src="{{{{ post.image.url }}}}" alt="Thumb" />
+            <a href="{% url 'actualite_detail' a.slug %}">
+              <img src="{{ a.image.url }}" alt="Thumb" />
             </a>
           </div>
           <div class="info">
-            <a href="{% url 'post_detail' post.slug %}">{{post.title}}</a>
+            <a href="{% url 'actualite_detail' a.slug %}">{{a.title}}</a>
             <div class="meta-title">
-              <span class="post-date">{{ post.date_added }}</span>
+              <span class="post-date">{{ a.date_added }}</span>
               <!--
-              - By
-              <a href="#">Author</a>
-              -->
+                - By
+                <a href="#">Author</a>
+                -->
             </div>
           </div>
         </li>

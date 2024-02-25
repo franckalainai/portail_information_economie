@@ -100,151 +100,34 @@
             class="top-course-items top-courses-carousel owl-carousel owl-theme"
           >
             <!-- Single Item -->
+            {% for a in actualites %}
             <div class="item">
               <div class="thumb">
-                <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb" />
+                <img src="{{ a.image.url }}" alt="Thumb" />
                 <div class="overlay">
+                  '
                   <a href="#">
-                    <img
-                      src="{% static 'assets/img/100x100.png' %}"
-                      alt="Thumb"
-                    />
+                    <img src="{{ a.image.url }}" alt="Thumb" />
                   </a>
-                  <ul>
-                    <li><i class="fas fa-clock"></i> 04:15:38</li>
-                    <li><i class="fas fa-list-ul"></i> 32</li>
-                  </ul>
                 </div>
               </div>
               <div class="info">
-                <div class="meta">
-                  <ul>
-                    <li>
-                      <a href="#">Education</a>
-                      <a href="#">Tech</a>
-                    </li>
-                    <li>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star-half-alt"></i>
-                      <span>(1k)</span>
-                    </li>
-                  </ul>
-                </div>
-                <h4>
-                  <a href="#">data science and software</a>
+                <h4 style="text-align: justify">
+                  <a href="{% url 'actualite_detail' a.slug %}"
+                    >{{ a.title | truncatechars:80}}</a
+                  >
                 </h4>
-                <p>
-                  Wisdom praise things she before. Be mother itself vanity
-                  favour do me of. Begin sex was power joy after had walls
-                  miles.
+                <p style="text-align: justify">
+                  {{ a.intro | safe |truncatechars:150}}
                 </p>
                 <div class="footer-meta">
-                  <a class="btn btn-theme effect btn-sm" href="#">Enroll Now</a>
-                  <h4>$23.00</h4>
+                  <a class="btn btn-theme effect btn-sm" href="#"
+                    >Lire la suite...</a
+                  >
                 </div>
               </div>
             </div>
-            <!-- Single Item -->
-            <!-- Single Item -->
-            <div class="item">
-              <div class="thumb">
-                <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb" />
-                <div class="overlay">
-                  <a href="#">
-                    <img
-                      src="{% static 'assets/img/100x100.png' %}"
-                      alt="Thumb"
-                    />
-                  </a>
-                  <ul>
-                    <li><i class="fas fa-clock"></i> 08:27:00</li>
-                    <li><i class="fas fa-list-ul"></i> 65</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="info">
-                <div class="meta">
-                  <ul>
-                    <li>
-                      <a href="#">Illustration</a>
-                      <a href="#">Design</a>
-                    </li>
-                    <li>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <span>(2k)</span>
-                    </li>
-                  </ul>
-                </div>
-                <h4>
-                  <a href="#">Social Science & Humanities</a>
-                </h4>
-                <p>
-                  Wisdom praise things she before. Be mother itself vanity
-                  favour do me of. Begin sex was power joy after had walls
-                  miles.
-                </p>
-                <div class="footer-meta">
-                  <a class="btn btn-theme effect btn-sm" href="#">Enroll Now</a>
-                  <h4>$39.00</h4>
-                </div>
-              </div>
-            </div>
-            <!-- Single Item -->
-            <!-- Single Item -->
-            <div class="item">
-              <div class="thumb">
-                <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb" />
-                <div class="overlay">
-                  <a href="#">
-                    <img
-                      src="{% static 'assets/img/100x100.png' %}"
-                      alt="Thumb"
-                    />
-                  </a>
-                  <ul>
-                    <li><i class="fas fa-clock"></i> 04:15:38</li>
-                    <li><i class="fas fa-list-ul"></i> 32</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="info">
-                <div class="meta">
-                  <ul>
-                    <li>
-                      <a href="#">Science</a>
-                      <a href="#">Tech</a>
-                    </li>
-                    <li>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <span>(4.6k)</span>
-                    </li>
-                  </ul>
-                </div>
-                <h4>
-                  <a href="#">Programming Masterclass</a>
-                </h4>
-                <p>
-                  Wisdom praise things she before. Be mother itself vanity
-                  favour do me of. Begin sex was power joy after had walls
-                  miles.
-                </p>
-                <div class="footer-meta">
-                  <a class="btn btn-theme effect btn-sm" href="#">Enroll Now</a>
-                  <h4>$54.00</h4>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
             <!-- Single Item -->
           </div>
         </div>
@@ -348,148 +231,54 @@
     <div class="row">
       <div class="site-heading text-center">
         <div class="col-md-8 col-md-offset-2">
-          <h2>Flash economiques</h2>
-          <p>
-            Discourse assurance estimable applauded to so. Him everything
-            melancholy uncommonly but solicitude inhabiting projection off.
-            Connection stimulated estimating excellence an to impression.
-          </p>
+          <h2>Actualités</h2>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="blog-items">
         <!-- Single Item -->
+        {% for a in actualites %}
         <div class="col-md-4 single-item">
           <div class="item">
             <div class="thumb">
               <a href="#">
-                <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb" />
+                <img src="{{ a.image.url }}" alt="Thumb" />
               </a>
             </div>
             <div class="info">
               <div class="meta">
                 <ul>
-                  <li>
-                    <a href="#"><i class="fas fa-user"></i> Admin</a>
-                  </li>
-                  <li><i class="fas fa-calendar-alt"></i> 14 Jun, 2020</li>
+                  <li><i class="fas fa-calendar-alt"></i>{{a.date_added}}</li>
                 </ul>
               </div>
               <div class="content">
-                <div class="tags">
-                  <a href="#">Event</a>
-                  <a href="#">Education</a>
-                </div>
-                <h4>
-                  <a href="#"
-                    >Inquietude assistance precaution any impression man
-                    sufficient.</a
-                  >
+                <h4 style="text-align: justify">
+                  <a href="#">{{a.title | truncatechars:80}}</a>
                 </h4>
-                <p>
-                  Resembled at perpetual no believing is otherwise sportsman. Is
-                  do he dispatched cultivated travelling astonished.
+                <p style="text-align: justify">
+                  {{a.intro | truncatechars:255}}
                 </p>
-                <a href="#"><i class="fas fa-plus"></i> Read More</a>
+                <a href="{% url 'actualite_detail' a.slug %}"
+                  ><i class="fas fa-plus"></i>Lire la suite...</a
+                >
               </div>
             </div>
           </div>
         </div>
-        <!-- End Single Item -->
-        <!-- Single Item -->
-        <div class="col-md-4 single-item">
-          <div class="item">
-            <div class="thumb">
-              <a href="#">
-                <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb" />
-              </a>
-            </div>
-            <div class="info">
-              <div class="meta">
-                <ul>
-                  <li>
-                    <a href="#"><i class="fas fa-user"></i> Admin</a>
-                  </li>
-                  <li><i class="fas fa-calendar-alt"></i> 25 Jul, 2020</li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="tags">
-                  <a href="#">Learing</a>
-                  <a href="#">Geography</a>
-                </div>
-                <h4>
-                  <a href="#"
-                    >Discourse ye continued pronounce we Particular use
-                    abilities.</a
-                  >
-                </h4>
-                <p>
-                  Resembled at perpetual no believing is otherwise sportsman. Is
-                  do he dispatched cultivated travelling astonished.
-                </p>
-                <a href="#"><i class="fas fa-plus"></i> Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Single Item -->
-        <!-- Single Item -->
-        <div class="col-md-4 single-item">
-          <div class="item">
-            <div class="thumb">
-              <a href="#">
-                <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb" />
-              </a>
-            </div>
-            <div class="info">
-              <div class="meta">
-                <ul>
-                  <li>
-                    <a href="#"><i class="fas fa-user"></i> Admin</a>
-                  </li>
-                  <li><i class="fas fa-calendar-alt"></i> 18 Sep, 2020</li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="tags">
-                  <a href="#">Courses</a>
-                  <a href="#">Tech</a>
-                </div>
-                <h4>
-                  <a href="#"
-                    >Deficient discourse do newspaper be an eagerness
-                    continued.</a
-                  >
-                </h4>
-                <p>
-                  Resembled at perpetual no believing is otherwise sportsman. Is
-                  do he dispatched cultivated travelling astonished.
-                </p>
-                <a href="#"><i class="fas fa-plus"></i> Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
         <!-- End Single Item -->
       </div>
     </div>
   </div>
 </div>
 
-<!-- Start Categories 
-<div class="category-area default-padding">
+<div class="category-area default-padding" style="margin-top: -150px">
   <div class="container">
     <div class="row">
       <div class="site-heading text-center">
         <div class="col-md-8 col-md-offset-2">
-          <h2>Top Categories</h2>
-          <p>
-            Discourse assurance estimable applauded to so. Him everything
-            melancholy uncommonly but solicitude inhabiting projection off.
-            Connection stimulated estimating excellence an to impression.
-          </p>
+          <h2>Flashs économiques</h2>
         </div>
       </div>
     </div>
@@ -504,8 +293,7 @@
                 </div>
                 <div class="info">
                   <h5>Analysis of Algorithms</h5>
-                  <p>Current enrolled <strong>1278</strong></p>
-                  <span>28 Courses</span>
+                  <p>Opening Remarks by Dr. Akinwumi A. Adesina President,</p>
                 </div>
               </div>
             </a>
@@ -595,10 +383,8 @@
     </div>
   </div>
 </div>
--->
 
-<!-- Start Event 
-  ============================================= -->
+<!--
 <div class="event-area default-padding" style="margin-top: -150px">
   <div class="container">
     <div class="row">
@@ -616,18 +402,20 @@
     <div class="row">
       <div class="col-md-12">
         <div class="event-items">
-          <!-- Single Item -->
+          {% for a in actualites %}
           <div class="item">
             <div
               class="col-md-5 thumb"
               style="background-image: url('/static/assets/img/800x600.png')"
-            ></div>
+            >
+              <img src="{{ a.image.url }}" />
+            </div>
             <div class="col-md-7 info">
               <div class="info-box">
                 <div class="date"><strong>16</strong> Apr, 2020</div>
                 <div class="content">
                   <h4>
-                    <a href="#">Social Science & Humanities</a>
+                    <a href="#">{{ a.title }}</a>
                   </h4>
                   <ul>
                     <li><i class="fas fa-clock"></i> 8:00 - 16:00</li>
@@ -635,11 +423,7 @@
                       <i class="fas fa-map-marked-alt"></i> California, TX 70240
                     </li>
                   </ul>
-                  <p>
-                    Attachment astonished to on appearance imprudence so
-                    collecting in excellence. Tiled way blind lived whose new.
-                    The for fully had she there leave merit enjoy forth.
-                  </p>
+                  <p>{{ a.intro }}</p>
                   <div class="bottom">
                     <a href="#" class="btn circle btn-dark border btn-sm">
                       <i class="fas fa-chart-bar"></i> Book Now
@@ -652,81 +436,7 @@
               </div>
             </div>
           </div>
-          <!-- End Single Item -->
-          <!-- Single Item -->
-          <div class="item">
-            <div
-              class="col-md-5 thumb"
-              style="background-image: url('/static/assets/img/800x600.png')"
-            ></div>
-            <div class="col-md-7 info">
-              <div class="info-box">
-                <div class="date"><strong>08</strong> Jul, 2020</div>
-                <div class="content">
-                  <h4>
-                    <a href="#">Secondary Schools United Nations</a>
-                  </h4>
-                  <ul>
-                    <li><i class="fas fa-clock"></i> 10:00 - 14:00</li>
-                    <li>
-                      <i class="fas fa-map-marked-alt"></i> California, TX 70240
-                    </li>
-                  </ul>
-                  <p>
-                    Attachment astonished to on appearance imprudence so
-                    collecting in excellence. Tiled way blind lived whose new.
-                    The for fully had she there leave merit enjoy forth.
-                  </p>
-                  <div class="bottom">
-                    <a href="#" class="btn circle btn-dark border btn-sm">
-                      <i class="fas fa-chart-bar"></i> Book Now
-                    </a>
-                    <a href="#">
-                      <i class="fas fa-ticket-alt"></i> 58 Available
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Single Item -->
-          <!-- Single Item -->
-          <div class="item">
-            <div
-              class="col-md-5 thumb"
-              style="background-image: url('/static/assets/img/800x600.png')"
-            ></div>
-            <div class="col-md-7 info">
-              <div class="info-box">
-                <div class="date"><strong>19</strong> Aug, 2020</div>
-                <div class="content">
-                  <h4>
-                    <a href="#">International Conference on Art Business</a>
-                  </h4>
-                  <ul>
-                    <li><i class="fas fa-clock"></i> 11:00 - 19:00</li>
-                    <li>
-                      <i class="fas fa-map-marked-alt"></i> California, TX 70240
-                    </li>
-                  </ul>
-                  <p>
-                    Attachment astonished to on appearance imprudence so
-                    collecting in excellence. Tiled way blind lived whose new.
-                    The for fully had she there leave merit enjoy forth.
-                  </p>
-                  <div class="bottom">
-                    <a href="#" class="btn circle btn-dark border btn-sm">
-                      <i class="fas fa-chart-bar"></i> Book Now
-                    </a>
-                    <a href="#">
-                      <i class="fas fa-ticket-alt"></i> 256 Available
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Single Item -->
+          {% endfor %}
         </div>
       </div>
       <div class="more-btn col-md-12 text-center">
@@ -735,9 +445,8 @@
     </div>
   </div>
 </div>
-<!-- End Event -->
 
-<!-- End Blog -->
+-->
 
 <!-- Start Newsletter 
   ============================================= -->
