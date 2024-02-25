@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'actualite',
-    'publication',
     'taggit',
 ]
 
@@ -149,13 +147,14 @@ USE_TZ = True
 #STATICFILES_DIRS = [BASE_DIR / "static"]  
 #STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# en ligne
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
     'economie/static'
 ]
 
-
+# en local
 #STATIC_URL = '/static/'
 #STATICFILES_DIRS = [
     #'static'

@@ -4,17 +4,22 @@ from django.db.models import Count
 #from publication.models import *
 
 from .models import *
-from actualite.models import *
 
 def index(request):
     posts = Post.objects.all()
     actualites = Actualite.objects.all()
     agendas = Agenda.objects.all()
+    communiques = Communique.objects.all()
+    flashs = Flash.objects.all()
+    biographies = Bio.objects.all()
 
     context = {
         'posts': posts, 
         'actualites': actualites,
         'agendas': agendas,
+        'communiques': communiques,
+        'flashs': flashs,
+        'biographies': biographies,
     }
     #publications = Publication.objects.all()
     return render(request, 'home.html', context)
@@ -38,6 +43,16 @@ def agenda(request):
     agendas = Agenda.objects.all()
     #publications = Publication.objects.all()
     return render(request, 'agendas/home.html', {'agendas': agendas,})
+
+def actualite(request):
+    actualites = Actualite.objects.all()
+    #publications = Publication.objects.all()
+    return render(request, 'actualites/home.html', {'actualites': actualites,})
+
+def publication(request):
+    publications = Publication.objects.all()
+    #publications = Publication.objects.all()
+    return render(request, 'publications/home.html', {'publications': publications,})
 
 def post_detail(request, post):
     #post = Post.objects.get(slug=slug)
@@ -101,3 +116,29 @@ def agenda_detail(request, slug):
     except Exception as e:
         print(e)
     return render(request, 'agendas/detail.html', context)
+
+def actualite_detail(request, slug):
+    actualite=get_object_or_404(Actualite,slug=slug,status='published')
+    post_tags_ids = actualite.tags.values_list('id', flat=True)
+    similar_posts = Actualite.published.filter(tags__in=post_tags_ids).exclude(id=actualite.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-publish')[:6]
+    context = {'similar_posts':similar_posts,}
+    try:
+        blog_obj = Actualite.objects.filter(slug=slug).first()
+        context['blog_obj'] = blog_obj
+    except Exception as e:
+        print(e)
+    return render(request, 'actualites/detail.html', context)
+
+def publication_detail(request, slug):
+    publication=get_object_or_404(Publication,slug=slug,status='published')
+    post_tags_ids = publication.tags.values_list('id', flat=True)
+    similar_posts = Publication.published.filter(tags__in=post_tags_ids).exclude(id=publication.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-publish')[:6]
+    context = {'similar_posts':similar_posts,}
+    try:
+        blog_obj = Publication.objects.filter(slug=slug).first()
+        context['blog_obj'] = blog_obj
+    except Exception as e:
+        print(e)
+    return render(request, 'publications/detail.html', context)

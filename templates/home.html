@@ -4,35 +4,23 @@
     <div class="row">
       <div class="about-items">
         <div class="col-md-6 about-info">
-          <h2>Welcome ! <span>We're Global Education Academy</span></h2>
-          <blockquote>
-            A man who has never gone to school may steal from a freight car; but
-            if he has a university education, he may steal the whole railroad.
-          </blockquote>
+          {% for b in biographies %}
+          <h3>{{ b.title }}</h3>
+          <h4><span>{{ b.intro }}</span></h4>
+          <blockquote>{{ b.body | safe | truncatechars:317 }}</blockquote>
+
           <div class="semester-apply">
             <div class="row">
               <div class="col-md-6 col-sm-6 item">
-                <h4>Semester Fall 2020</h4>
-                <p>
-                  Affection additions nay. He no an nature ye talent houses
-                  wisdom.
-                </p>
-                <a class="btn btn-dark effect btn-sm" href="#"
-                  ><i class="fas fa-angle-right"></i> Apply Now</a
-                >
-              </div>
-              <div class="col-md-6 col-sm-6 item">
-                <h4>Scholarship</h4>
-                <p>
-                  Northward affection additions nay. He no an nature ye talent
-                  houses.
-                </p>
-                <a class="btn btn-dark effect btn-sm" href="#"
-                  ><i class="fas fa-angle-right"></i> Apply Now</a
+                <a
+                  class="btn btn-dark effect btn-sm"
+                  href="{% url 'bio_detail' b.slug %}"
+                  ><i class="fas fa-angle-right"></i> Lire la suite...</a
                 >
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
         <div class="col-md-6 features text-light">
           <div class="row">
