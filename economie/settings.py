@@ -85,16 +85,16 @@ WSGI_APPLICATION = 'economie.wsgi.application'
     #}
 #}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'economie',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
-        'PORT':'3306',
-    }
-}
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'economie',
+        #'USER': 'root',
+        #'PASSWORD': '',
+        #'HOST':'localhost',
+        #'PORT':'3306',
+    #}
+#}
 
 DATABASES = {
     'default': {

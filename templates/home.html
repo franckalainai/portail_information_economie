@@ -100,31 +100,33 @@
             class="top-course-items top-courses-carousel owl-carousel owl-theme"
           >
             <!-- Single Item -->
-            {% for a in actualites %}
+            {% for c in communiques %}
             <div class="item">
               <div class="thumb">
-                <img src="{{ a.image.url }}" alt="Thumb" />
+                <img src="{{ c.image.url }}" alt="Thumb" />
                 <div class="overlay">
                   '
                   <a href="#">
-                    <img src="{{ a.image.url }}" alt="Thumb" />
+                    <img src="{{ c.image.url }}" alt="Thumb" />
                   </a>
                 </div>
               </div>
               <div class="info">
                 <h4 style="text-align: justify">
-                  <a href="{% url 'actualite_detail' a.slug %}"
-                    >{{ a.title | truncatechars:80}}</a
+                  <a href="{% url 'communique_detail' c.slug %}"
+                    >{{ c.title | truncatechars:80}}</a
                   >
                 </h4>
                 <p style="text-align: justify">
-                  {{ a.intro | safe |truncatechars:150}}
+                  {{ c.intro | safe |truncatechars:150}}
                 </p>
+                <!--
                 <div class="footer-meta">
                   <a class="btn btn-theme effect btn-sm" href="#"
                     >Lire la suite...</a
                   >
                 </div>
+                -->
               </div>
             </div>
             {% endfor %}
@@ -137,87 +139,28 @@
           <h4>Agendas</h4>
           <div class="author-items">
             <!-- Single Item -->
+            {% for a in agendas %}
             <div class="item">
               <div class="thumb">
                 <a href="#">
                   <img
-                    src="{% static 'assets/img/100x100.png' %}"
+                    src="{% static 'assets/img/agenda_1.png' %}"
                     alt="Thumb"
                   />
                 </a>
               </div>
               <div class="info">
-                <h5><a href="#">Professon. Nuri Paul</a></h5>
+                <h5><a href="#">{{ a.title | truncatechars:50}}</a></h5>
                 <ul>
-                  <li>Students enrolled <strong>12k+</strong></li>
-                  <li>
-                    <span>Rating</span>
-                    <div class="rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star-half-alt"></i>
-                    </div>
-                  </li>
+                  <li>{{ a.intro | truncatechars:100 }}</li>
                 </ul>
               </div>
             </div>
+            {% endfor %}
             <!-- End Single Item -->
-            <!-- Single Item -->
-            <div class="item">
-              <div class="thumb">
-                <a href="#">
-                  <img
-                    src="{% static 'assets/img/100x100.png' %}"
-                    alt="Thumb"
-                  />
-                </a>
-              </div>
-              <div class="info">
-                <h5><a href="#">Dr. Bubly Minu</a></h5>
-                <ul>
-                  <li>Students enrolled <strong>16k+</strong></li>
-                  <li>
-                    <span>Rating</span>
-                    <div class="rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Single Item -->
-            <!-- Single Item -->
-            <div class="item">
-              <div class="thumb">
-                <a href="#"
-                  ><img src="{% static 'assets/img/100x100.png' %}" alt="Thumb"
-                /></a>
-              </div>
-              <div class="info">
-                <h5><a href="#">Monayem Pruda</a></h5>
-                <ul>
-                  <li>Students enrolled <strong>23k+</strong></li>
-                  <li>
-                    <span>Rating</span>
-                    <div class="rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star-half-alt"></i>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Single Item -->
-            <a href="#">View All <i class="fas fa-angle-double-right"></i></a>
+            <a href="#"
+              >Voir les agendas <i class="fas fa-angle-double-right"></i
+            ></a>
           </div>
         </div>
       </div>
