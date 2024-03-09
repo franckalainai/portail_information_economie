@@ -13,33 +13,18 @@
         </form>
       </div>
     </div>
-    <div class="sidebar-item recent-post">
-      <!--
+    <div class="sidebar-item category">
       <div class="title">
-        <h4>Recent Post</h4>
+          <h4>Articles similaires</h4>
       </div>
-      -->
       <ul>
         {% for post in similar_posts %}
-        <li>
-          <div class="thumb">
-            <a href="{% url 'post_detail' post.slug %}">
-              <img src="{{{{ post.image.url }}}}" alt="Thumb" />
-            </a>
-          </div>
-          <div class="info">
-            <a href="{% url 'post_detail' post.slug %}">{{post.title}}</a>
-            <div class="meta-title">
-              <span class="post-date">{{ post.date_added }}</span>
-              <!--
-              - By
-              <a href="#">Author</a>
-              -->
-            </div>
-          </div>
-        </li>
-        {% empty %} {% endfor %}
+          <li>
+              <a href="{% url 'post_detail' post.slug %}">{{post.title}}<span>23</span></a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </aside>
 </div>
+
