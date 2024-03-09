@@ -54,6 +54,16 @@ def publication(request):
     #publications = Publication.objects.all()
     return render(request, 'publications/home.html', {'publications': publications,})
 
+def rubriques_publications(request):
+    rubriques = Rubrique.objects.all()
+    #publications = Publication.objects.all()
+    return render(request, 'publications/rubriques.html', {'rubriques': rubriques,})
+
+def conjonctures(request):
+    conjonctures = Conjoncture.objects.all()
+    #publications = Publication.objects.all()
+    return render(request, 'conjonctures/home.html', {'conjonctures': conjonctures,})
+
 def post_detail(request, post):
     #post = Post.objects.get(slug=slug)
     post=get_object_or_404(Post,slug=post,status='published')

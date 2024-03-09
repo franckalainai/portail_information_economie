@@ -1,11 +1,70 @@
-{% extends 'base.html' %} {% block content %} {% for actualite in actualites %}
-<div class="actualite block">
-  <h2 class="subtitle">{{ actualite.title }}</h2>
+{% extends 'base_actualite.html' %} 
+{% block content %}
+    <!-- Start Popular Courses
+    ============================================= -->
+    <div class="popular-courses-area weekly-top-items default-padding bottom-less">
+        <div class="container">
+            <div class="row">
+                <div class="site-heading text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2>Actualités</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="top-course-items">
+                    <!-- Single Item -->
+                    {% for actualite in actualites %}
+                        <div class="col-md-4 col-sm-6 equal-height">
+                            <div class="item">
+                                <div class="thumb">
+                                    <img src="{{ actualite.image.url }}" alt="Thumb">
+                                    <div class="overlay">
+                                        <a href="#">
+                                            <img src="{{ actualite.image.url }}" alt="Thumb">
+                                        </a>
+                                        <ul>
+                                            <li><i class="fas fa-clock"></i> 04:15:38</li>
+                                            <li><i class="fas fa-list-ul"></i> 32</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="meta">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Education</a>
+                                                <a href="#">Tech</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <span>(1k)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h4>
+                                        <a href="#">{{ actualite.title }}</a>
+                                    </h4>
+                                    <p>
+                                        {{ actualite.intro | safe |truncatechars:255 }} 
+                                    </p>
+                                    <div class="footer-meta">
+                                        <a class="btn btn-theme effect btn-sm" href="{% url 'actualite_detail' actualite.slug %}">Lire l'article...</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- Single Item -->
+                    {% endfor %} 
 
-  <small>actualite at {{ actualite.date_added }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Popular Courses -->
 
-  <p>{{ actualite.intro }}</p>
-
-  <a href="{% url 'actualite_detail' actualite.slug %}">Read more</a>
-</div>
-{% endfor %} {% endblock %}
+{% endblock %}

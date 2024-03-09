@@ -1,17 +1,34 @@
-{% extends 'base.html' %} {% block content %}
-<h1 class="title">{{ blog_obj.title }}</h1>
-<p>{{ blog_obj.body | safe}}</p>
+{% extends 'base_detail.html' %} {% block content %}
 
-{% for tag in bio.tags.all %}
-<h3 class="sidebar__title">{{tag.name}}</h3>
-{% endfor %}
-<!-- /.sidebar__title -->
-<ul class="list-unstyled sidebar__lists">
-  {% for bio in similar_posts %}
-  <li>
-    <a href="{% url 'bio_detail' bio.slug %}">{{bio.title}}</a>
-  </li>
-  {% empty %} {% endfor %}
-</ul>
+<!-- Start Blog
+    ============================================= -->
+    <div class="blog-area full-blog blog-standard full-blog default-padding">
+      <div class="container">
+          <div class="row">
+              <div class="blog-items">
+                  <div class="blog-content col-md-10 col-md-offset-1">
+                      <div class="content-items">
+                          <!-- Single Item -->
+                          <div class="single-item">
+                              <div class="item">
+                                  <div class="info">
 
-{% endblock %}
+                                      <div class="content">
+                                          <p>
+                                            {{ blog_obj.body | safe}}
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- End Blog Items -->
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End Blog -->
+
+{% include 'include/newsletter.html' %} {% endblock %}

@@ -47,6 +47,12 @@ class ActualiteAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('body',)
 
+class ConjonctureAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'source', 'slug', 'intro','date_added')
+    search_fields = ['title', 'body']
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('body',)
+
 
 admin.site.register(Actualite, ActualiteAdmin)
 admin.site.register(Publication, PublicationAdmin)
@@ -55,3 +61,5 @@ admin.site.register(Communique, CommuniqueAdmin)
 admin.site.register(Flash, FlashAdmin)
 admin.site.register(Bio, BioAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Rubrique)
+admin.site.register(Conjoncture, ConjonctureAdmin)

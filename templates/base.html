@@ -66,10 +66,15 @@
     <div class="top-bar-area bg-dark text-light">
       {% include 'include/topbar.html' %}
     </div>
-    <header id="home">{% include 'include/header.html' %}</header>
-    {% include 'include/banner.html' %} {%block content %} {% endblock %}
-    <footer class="bg-light">{% include 'include/footer.html' %}</footer>
-
+    <header id="home">
+      {% include 'include/header.html' %}
+    </header>
+      {% include 'include/banner.html' %} 
+        {%block content %} 
+      {% endblock %}
+    <footer class="bg-dark text-light">
+      {% include 'include/footer.html' %}
+    </footer>
     <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/equal-height.min.js' %}"></script>
